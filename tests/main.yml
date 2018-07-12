@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create firewall rule
+      include_role:
+        name: ansible-role-cloud-firewallrule
+      vars:
+        ansible_cloud_provider: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
+        cloud_securitygroup_group_name: 'ansiblecloud-securitygroup'
+        cloud_securitygroup_protocol: tcp
+        cloud_securitygroup_start_port: 80
+        cloud_securitygroup_end_port: 80
+        cloud_securitygroup_remote_cidr: 0.0.0.0/0

@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# (c) 2018, Ricardo Carrillo Cruz <ricarril@redhat.com>
+# (c) 2018, Yanis Guenane <yguenane@redhat.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+
+- name: Create firewall rule
+  vr_firewall_rule:
+    group: '{{ cloud_firewallrule_group_name }}'
+    protocol: '{{ cloud_firewallrule_protocol }}'
+    start_port: '{{ cloud_firewallrule_start_port }}'
+    end_port: '{{ cloud_firewallrule_end_port }}'
+    cidr: '{{ cloud_firewallrule_remote_cidr }}'
