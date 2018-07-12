@@ -1,0 +1,15 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# (c) 2018, Ricardo Carrillo Cruz <ricarril@redhat.com>
+# (c) 2018, Yanis Guenane <yguenane@redhat.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+---
+- name: Create firewall rule
+  os_security_group_rule:
+    security_group: '{{ cloud_securitygroup_group_name }}'
+    protocol: '{{ cloud_securitygroup_protocol }}'
+    port_range_min: '{{ cloud_securitygroup_start_port }}'
+    port_range_max: '{{ cloud_securitygroup_end_port }}'
+    remote_ip_prefix: '{{ cloud_securitygroup_remote_cidr }}'
