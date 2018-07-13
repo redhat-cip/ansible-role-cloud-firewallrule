@@ -6,3 +6,4 @@
     start_port: '{{ cloud_firewallrule_start_port }}'
     end_port: '{{ cloud_firewallrule_end_port }}'
     cidr: '{{ cloud_firewallrule_remote_cidr }}'
+    state: '{{ cloud_firewallrule_state|default("present") }}'

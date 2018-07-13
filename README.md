@@ -18,6 +18,7 @@ Please refer to [ansible-cloud](https://github.com/redhat-cip/ansible-cloud) [RE
 | cloud_firewallrule_start_port  | True      | N/A     | int    | Starting port range          |
 | cloud_firewallrule_end_port    | True      | N/A     | int    | Ending port range            |
 | cloud_firewallrule_remote_cidr | True      | N/A     | String | Remote CIDR range            |
+| cloud_firewallrule_state       | False     | present | String | Should the rule be present   |
 
 
 ## Example
