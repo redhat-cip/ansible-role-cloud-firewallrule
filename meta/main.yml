@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: Yanis Guenane <yguenane@redhat.com>
+  description: An Ansible role for managing firewall rule on the Cloud in an agnostic cloud provider way
+  company: Red Hat
+  license: license (Apache)
+  min_ansible_version: 2.6
+  platforms: []
+  galaxy_tags:
+    - cloud
+
+dependencies: []

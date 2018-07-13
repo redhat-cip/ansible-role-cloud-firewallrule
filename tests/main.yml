@@ -4,12 +4,6 @@
     ansible_cloud_provider: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
     securitygroup_name: 'ansiblecloud-securitygroup'
   tasks:
-    - name: Create Security Group
-      include_role:
-        name: ansible-role-cloud-securitygroup
-      vars:
-        cloud_securitygroup_name: '{{ securitygroup_name }}'
-
     - name: Create firewall rule
       include_role:
         name: ansible-role-cloud-firewallrule
