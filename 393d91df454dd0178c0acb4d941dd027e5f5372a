@@ -1,0 +1,8 @@
+Code-Review+2: Yanis Guenane <yguenane@gmail.com>
+Workflow+1: Yanis Guenane <yguenane@gmail.com>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Fri, 13 Jul 2018 08:36:17 +0000
+Reviewed-on: https://softwarefactory-project.io/r/13039
+Project: ansible/ansible-role-cloud-firewallrule
+Branch: refs/heads/master
