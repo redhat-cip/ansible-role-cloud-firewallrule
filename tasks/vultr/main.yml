@@ -1,5 +1,5 @@
 ---
-- name: Create firewall rule
+- name: Manage firewall rule
   vr_firewall_rule:
     group: '{{ cloud_firewallrule_group_name }}'
     protocol: '{{ cloud_firewallrule_protocol }}'

@@ -1,0 +1,8 @@
+ansible_host: localhost
+ansible_connection: local
+
+cloud_firewallrule_group_name: ansiblecloud-testsecuritygroup
+cloud_firewallrule_protocol: tcp
+cloud_firewallrule_start_port: 80
+cloud_firewallrule_end_port: 81
+cloud_firewallrule_remote_cidr: 0.0.0.0/0
