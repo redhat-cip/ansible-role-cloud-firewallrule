@@ -1,0 +1,7 @@
+---
+- name: Remove Security Group
+  include_role:
+    name: ansible-role-cloud-securitygroup
+  vars:
+    cloud_securitygroup_name: ansiblecloud-testsecuritygroup
+    cloud_securitygroup_state: absent
