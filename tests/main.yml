@@ -1,26 +1,27 @@
 ---
 - hosts: localhost
+  tasks:
+    - name: Determine platform for which to run the tests
+      set_fact:
+        host: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
+
+- name: Running tests for '{{ hostvars.localhost.host }}'
+  hosts: '{{ hostvars.localhost.host }}'
   vars:
     ansible_cloud_provider: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
-    securitygroup_name: 'ansiblecloud-securitygroup'
   tasks:
+    - name: Setup
+      include_tasks: scenario/setup.yml
+
     - name: Create firewall rule
       include_role:
         name: ansible-role-cloud-firewallrule
-      vars:
-        cloud_firewallrule_group_name: '{{ securitygroup_name }}'
-        cloud_firewallrule_protocol: tcp
-        cloud_firewallrule_start_port: 80
-        cloud_firewallrule_end_port: 81
-        cloud_firewallrule_remote_cidr: 0.0.0.0/0
 
     - name: Remove firewall rule
       include_role:
         name: ansible-role-cloud-firewallrule
       vars:
-        cloud_firewallrule_group_name: '{{ securitygroup_name }}'
-        cloud_firewallrule_protocol: tcp
-        cloud_firewallrule_start_port: 80
-        cloud_firewallrule_end_port: 81
-        cloud_firewallrule_remote_cidr: 0.0.0.0/0
         cloud_firewallrule_state: absent
+
+    - name: Tear Down
+      include_tasks: scenario/teardown.yml

@@ -1,0 +1,6 @@
+---
+- name: Create Security Group
+  include_role:
+    name: cloud-securitygroup
+  vars:
+    cloud_securitygroup_name: ansiblecloud-testsecuritygroup
